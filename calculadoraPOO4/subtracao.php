@@ -1,7 +1,7 @@
 <?php
 
 final class Subtracao {
-
+    
     private float $num1;
     private float $num2;
 
@@ -23,7 +23,8 @@ final class Subtracao {
 
 
     public function calcularSubtracao(): float {
-        return $this->$num1 - $this->$num2;
+        return $this->num1 - $this->num2;
     }
 
 }
+?>
