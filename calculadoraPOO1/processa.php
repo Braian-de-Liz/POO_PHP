@@ -1,21 +1,25 @@
 <?php
 
+final class Calculadora
+{
 
-final class Calculadora {
-
-    public static function somar(float $a, float $b) : float {
+    public static function somar(float $a, float $b): float
+    {
         return $a + $b;
     }
 
-    public static function subtrair(float $a, float $b) : float {
+    public static function subtrair(float $a, float $b): float
+    {
         return $a - $b;
     }
 
-    public static function multiplicar(float $a, float $b) : float {
+    public static function multiplicar(float $a, float $b): float
+    {
         return $a * $b;
     }
 
-    public static function dividir(float $a, float $b) {
+    public static function dividir(float $a, float $b)
+    {
 
         if ($b === 0.0) {
             return "Erro: divisão por zero";
@@ -23,7 +27,8 @@ final class Calculadora {
         return $a / $b;
     }
 
-    public static function exibirResultado(?string $er, string $oper, ?float $v1, ?float $v2, ?float $resultado) {
+    public static function exibirResultado(?string $er, string $oper, ?float $v1, ?float $v2, ?float $resultado)
+    {
 
         echo "<h3>Resultado</h3>";
 
@@ -55,7 +60,8 @@ final class Calculadora {
         echo '<p><a href="index.html">Voltar</a></p>';
     }
 
-    public static function parse_num($val) : ?float {
+    public static function parse_num($val): ?float
+    {
         $s = trim($val);
         $s = str_replace(',', '.', $s);
 
@@ -64,8 +70,7 @@ final class Calculadora {
         }
         return floatval($s);
     }
-
-} 
+}
 
 
 
@@ -109,11 +114,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 break;
             default:
                 $error = 'Operação desconhecida.';
-        } 
-    } 
+        }
+    }
 
     Calculadora::exibirResultado($error, $operacao, $val1, $val2, $result);
-
 }
-
-?>
