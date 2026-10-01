@@ -20,7 +20,7 @@
             $this->num2 = $num2;
         }
 
-        public function calcularSoma() {
-            $this->num1 + $this->num2;
+        public function calcularSoma(): float {
+            return $this->num1 + $this->num2;
         }
     }

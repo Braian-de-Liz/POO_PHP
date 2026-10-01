@@ -18,7 +18,7 @@ final class Subtracao {
     }
 
     public function setNum2(float $num2): void {
-        $this->num1 = $num2;
+        $this->num2 = $num2;
     }
 
 
@@ -27,4 +27,3 @@ final class Subtracao {
     }
 
 }
-?>

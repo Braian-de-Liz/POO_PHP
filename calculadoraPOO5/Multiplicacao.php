@@ -9,6 +9,7 @@ final class Multiplicacao implements IOperacao
     public function getNum1(): float {
         return $this->num1;
     }
+    
     public function setNum1(float $num1): void {
         $this->num1 = $num1;
     }

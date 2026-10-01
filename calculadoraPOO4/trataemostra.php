@@ -2,7 +2,7 @@
 
 final class TrataeMostra {
 
-    public static function exibirResultado(?string $er, string $oper, ?float $v1, ?float $v2, ?float $resultado) {
+    public static function exibirResultado(?string $er, string $oper, ?float $v1, ?float $v2, float|string|null $resultado) {
 
         echo "<h3>Resultado</h3>";
 
