@@ -1,0 +1,21 @@
+classDiagram
+    class Calculadora {
+        +somar(a, b) float
+        +subtrair(a, b) float
+        +multiplicar(a, b) float
+        +dividir(a, b) float|string
+    }
+
+    class Processa {
+        +main()
+    }
+
+    class TrataeMostra {
+        +exibirResultado()
+        +parseNum()
+    }
+
+    Processa --> Calculadora : new Calculadora()
+    Processa --> TrataeMostra
+
+    note for Calculadora "Métodos de instância\nPermite herança futura"

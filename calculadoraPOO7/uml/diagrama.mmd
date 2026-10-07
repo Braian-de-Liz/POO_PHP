@@ -1,0 +1,54 @@
+classDiagram
+    class ModeloIOperacao {
+        <<interface>>
+        +setNum1(num1) void
+        +setNum2(num2) void
+        +calcula() float
+    }
+
+    class ModeloOperacoes {
+        #num1: float
+        #num2: float
+        +getNum1() float
+        +setNum1(num1) void
+        +getNum2() float
+        +setNum2(num2) void
+    }
+
+    class ModeloSoma {
+        +calcula() float
+    }
+
+    class ModeloSubtracao {
+        +calcula() float
+    }
+
+    class ModeloMultiplicacao {
+        +calcula() float
+    }
+
+    class ModeloDivisao {
+        +calcula() float
+    }
+
+    class VisaoTrataeMostra {
+        +static parseNum(val) float
+        +static exibirResultado() void
+    }
+
+    class ControleProcessa {
+        +processarPost() void
+    }
+
+    ModeloIOperacao <|.. ModeloOperacoes
+    ModeloOperacoes <|-- ModeloSoma
+    ModeloOperacoes <|-- ModeloSubtracao
+    ModeloOperacoes <|-- ModeloMultiplicacao
+    ModeloOperacoes <|-- ModeloDivisao
+
+    ControleProcessa ..> ModeloOperacoes : usa
+    ControleProcessa ..> VisaoTrataeMostra : usa
+
+    note for ModeloOperacoes "Classe abstrata\nTemplate Method"
+    note for ControleProcessa "Controller\nRecebe POST, orquestra"
+    note for VisaoTrataeMostra "View\nApresentacao + parsing"

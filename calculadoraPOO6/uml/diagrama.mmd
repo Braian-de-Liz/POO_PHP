@@ -1,0 +1,53 @@
+classDiagram
+    class IOperacao {
+        <<interface>>
+        +setNum1(n1) void
+        +setNum2(n2) void
+        +calcula() float
+    }
+
+    class Operacoes {
+        #num1: float
+        #num2: float
+        +setNum1() void
+        +getNum1() float
+        +setNum2() void
+        +getNum2() float
+        +calcula() float
+    }
+
+    class Soma {
+        +calcula() float
+    }
+
+    class Subtracao {
+        +calcula() float
+    }
+
+    class Multiplicacao {
+        +calcula() float
+    }
+
+    class Divisao {
+        +calcula() float
+    }
+
+    class Processa {
+        +main()
+    }
+
+    class TrataeMostra {
+        +exibirResultado()
+        +parseNum()
+    }
+
+    IOperacao <|.. Operacoes
+    Operacoes <|-- Soma
+    Operacoes <|-- Subtracao
+    Operacoes <|-- Multiplicacao
+    Operacoes <|-- Divisao
+
+    Processa --> IOperacao
+    Processa --> TrataeMostra
+
+    note for Operacoes "Classe abstrata\nGetters/setters centralizados"

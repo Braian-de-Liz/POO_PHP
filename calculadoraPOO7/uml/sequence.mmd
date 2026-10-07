@@ -1,0 +1,31 @@
+
+sequenceDiagram
+    actor User
+    participant View as index.html
+    participant Ctrl as processa.php
+    participant Model as Operacao (Soma/Subtração/etc)
+    participant ViewRes as TrataeMostra
+
+    User->>View: Preenche formulário
+    View->>Ctrl: POST /controllers/processa.php
+
+    Ctrl->>ViewRes: parseNum(valor1)
+    ViewRes-->>Ctrl: number|null
+    Ctrl->>ViewRes: parseNum(valor2)
+    ViewRes-->>Ctrl: number|null
+
+    alt Inválido
+        Ctrl->>ViewRes: exibirResultado(erro, ...)
+        ViewRes-->>User: HTML com erro
+    else Válido
+        Ctrl->>Model: new OperacaoConcreta()
+        Ctrl->>Model: setNum1(v1)
+        Ctrl->>Model: setNum2(v2)
+        Ctrl->>Model: calcula()
+        Model-->>Ctrl: resultado
+        
+        Ctrl->>ViewRes: exibirResultado(null, oper, v1, v2, resultado)
+        ViewRes-->>User: HTML com resultado
+    end
+
+    User->>View: Clica "Voltar"

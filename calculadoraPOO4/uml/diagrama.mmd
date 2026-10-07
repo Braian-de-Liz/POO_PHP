@@ -1,0 +1,57 @@
+classDiagram
+    class Soma {
+        -num1: float
+        -num2: float
+        +setNum1() void
+        +getNum1() float
+        +setNum2() void
+        +getNum2() float
+        +calcularSoma() float
+    }
+
+    class Subtracao {
+        -num1: float
+        -num2: float
+        +setNum1() void
+        +getNum1() float
+        +setNum2() void
+        +getNum2() float
+        +calcularSubtracao() float
+    }
+
+    class Multiplicacao {
+        -num1: float
+        -num2: float
+        +setNum1() void
+        +getNum1() float
+        +setNum2() void
+        +getNum2() float
+        +calculaMultiplicacao() float
+    }
+
+    class Dividir {
+        -num1: float
+        -num2: float
+        +setNum1() void
+        +getNum1() float
+        +setNum2() void
+        +getNum2() float
+        +calculaDivisao() float|string
+    }
+
+    class Processa {
+        +main()
+    }
+
+    class TrataeMostra {
+        +exibirResultado()
+        +parseNum()
+    }
+
+    Processa --> Soma
+    Processa --> Subtracao
+    Processa --> Multiplicacao
+    Processa --> Dividir
+    Processa --> TrataeMostra
+
+    note for Soma "Getters/setters duplicados\nMétodos com nomes diferentes\nSem interface comum"

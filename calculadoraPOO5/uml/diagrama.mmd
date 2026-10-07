@@ -1,0 +1,66 @@
+classDiagram
+    class IOperacao {
+        <<interface>>
+        +setNum1(n1) void
+        +setNum2(n2) void
+        +calcula() float
+    }
+
+    class Soma {
+        -num1: float
+        -num2: float
+        +setNum1() void
+        +getNum1() float
+        +setNum2() void
+        +getNum2() float
+        +calcula() float
+    }
+
+    class Subtracao {
+        -num1: float
+        -num2: float
+        +setNum1() void
+        +getNum1() float
+        +setNum2() void
+        +getNum2() float
+        +calcula() float
+    }
+
+    class Multiplicacao {
+        -num1: float
+        -num2: float
+        +setNum1() void
+        +getNum1() float
+        +setNum2() void
+        +getNum2() float
+        +calcula() float
+    }
+
+    class Divisao {
+        -num1: float
+        -num2: float
+        +setNum1() void
+        +getNum1() float
+        +setNum2() void
+        +getNum2() float
+        +calcula() float
+    }
+
+    class Processa {
+        +main()
+    }
+
+    class TrataeMostra {
+        +exibirResultado()
+        +parseNum()
+    }
+
+    IOperacao <|.. Soma
+    IOperacao <|.. Subtracao
+    IOperacao <|.. Multiplicacao
+    IOperacao <|.. Divisao
+
+    Processa --> IOperacao
+    Processa --> TrataeMostra
+
+    note for Divisao "Lanca Exception\nDivisao por zero"

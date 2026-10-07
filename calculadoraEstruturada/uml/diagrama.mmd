@@ -1,0 +1,19 @@
+flowchart TD
+    A[Usuário preenche formulário] --> B[index.html]
+    B --> C[POST processa.php]
+    C --> D{Validação parseNum}
+    D -->|Inválido| E[Erro: Entrada inválida]
+    D -->|Válido| F{Switch operação}
+    F -->|somar| G[somar v1, v2]
+    F -->|subtrair| H[subtrair v1, v2]
+    F -->|multiplicar| I[multiplicar v1, v2]
+    F -->|dividir| J{v2 == 0?}
+    J -->|Sim| K[Erro: Divisão por zero]
+    J -->|Não| L[dividir v1, v2]
+    G --> M[Exibir resultado]
+    H --> M
+    I --> M
+    L --> M
+    E --> M
+    K --> M
+    M --> N[Link Voltar para index.html]
