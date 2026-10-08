@@ -1,6 +1,6 @@
 <?php
 
-require_once 'IOperacao.php';
+require_once __DIR__ . '/IOperacao.php';
 
 abstract class Operacoes implements IOperacao {
 

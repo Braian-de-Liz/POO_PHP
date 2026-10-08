@@ -1,11 +1,11 @@
 <?php
 
-require_once '../models/Operacoes.php';
-require_once '../models/Soma.php';
-require_once '../models/Subtracao.php';
-require_once '../models/Multiplicacao.php';
-require_once '../models/Divisao.php';
-require_once '../views/TrataeMostra.php';
+require_once __DIR__ . '/../models/Operacoes.php';
+require_once __DIR__ . '/../models/Soma.php';
+require_once __DIR__ . '/../models/Subtracao.php';
+require_once __DIR__ . '/../models/Multiplicacao.php';
+require_once __DIR__ . '/../models/Divisao.php';
+require_once __DIR__ . '/../views/TrataeMostra.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
